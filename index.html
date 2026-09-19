@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>70mai Dash Cam 4K Omni</title>
+
+    <meta name="description" content="70mai Dash Cam 4K Omni – 360° Rundumsicht, echte 4K-Aufnahmen und intelligente Fahrzeugüberwachung.">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            background: #05070a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(5, 7, 10, 0.88);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .nav-inner {
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: #ff5b3d;
+        }
+
+        .nav-button {
+            background: #ffffff;
+            color: #05070a;
+            padding: 11px 18px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 70px 0;
+            background:
+                radial-gradient(circle at 50% 20%, rgba(255, 91, 61, 0.18), transparent 35%),
+                radial-gradient(circle at 80% 70%, rgba(50, 120, 255, 0.12), transparent 35%);
+        }
+
+        .hero-content {
+            text-align: center;
+            width: 100%;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 30px;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #bfc5ce;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(44px, 10vw, 92px);
+            line-height: 0.98;
+            letter-spacing: -4px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #ff5b3d;
+        }
+
+        .hero-subtitle {
+            max-width: 680px;
+            margin: auto;
+            color: #b8bec8;
+            font-size: 18px;
+        }
+
+        /* CAMERA VISUAL */
+
+        .camera-stage {
+            height: 300px;
+            margin: 50px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .camera-glow {
+            position: absolute;
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            background: rgba(255, 91, 61, 0.13);
+            filter: blur(45px);
+        }
+
+        .camera {
+            width: 220px;
+            height: 145px;
+            border-radius: 30px;
+            background: linear-gradient(145deg, #242830, #090b0f);
+            border: 1px solid rgba(255,255,255,0.18);
+            box-shadow:
+                0 35px 80px rgba(0,0,0,0.7),
+                inset 0 1px 0 rgba(255,255,255,0.15);
+            position: relative;
+            transform: perspective(700px) rotateX(7deg) rotateY(-8deg);
+        }
+
+        .camera-lens {
+            width: 92px;
+            height: 92px;
+            border-radius: 50%;
+            position: absolute;
+            left: 64px;
+            top: 26px;
+            background:
+                radial-gradient(circle at 35% 30%, #ffffff, #4b5868 5%, #111827 30%, #020305 60%);
+            border: 7px solid #151922;
+            box-shadow:
+                0 0 0 2px #59616c,
+                0 0 35px rgba(80,140,255,0.25);
+        }
+
+        .camera-led {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ff5b3d;
+            position: absolute;
+            right: 22px;
+            top: 20px;
+            box-shadow: 0 0 14px #ff5b3d;
+        }
+
+        .camera-label {
+            position: absolute;
+            bottom: 12px;
+            left: 20px;
+            font-size: 10px;
+            color: #b9bec8;
+            letter-spacing: 1px;
+        }
+
+        /* BUTTONS */
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: 800;
+            transition: 0.25s;
+        }
+
+        .button-primary {
+            background: #ff5b3d;
+            color: white;
+            box-shadow: 0 12px 35px rgba(255,91,61,0.25);
+        }
+
+        .button-primary:hover {
+            transform: translateY(-3px);
+        }
+
+        .button-secondary {
+            border: 1px solid rgba(255,255,255,0.18);
+            color: #ffffff;
+        }
+
+        /* FEATURES */
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(32px, 6vw, 56px);
+            letter-spacing: -2px;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #9299a5;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .features {
+            margin-top: 55px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .feature {
+            padding: 30px;
+            border-radius: 25px;
+            background: linear-gradient(145deg, #11151b, #090b0f);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .feature-number {
+            color: #ff5b3d;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            color: #9299a5;
+        }
+
+        /* 4K SECTION */
+
+        .dark-section {
+            background: #080b10;
+        }
+
+        .split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .big-number {
+            font-size: clamp(80px, 15vw, 180px);
+            font-weight: 900;
+            line-height: 0.8;
+            letter-spacing: -10px;
+            color: #ffffff;
+        }
+
+        .big-number span {
+            color: #ff5b3d;
+        }
+
+        .split h2 {
+            font-size: clamp(34px, 6vw, 65px);
+            line-height: 1;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+        }
+
+        .split p {
+            color: #9ba2ad;
+            font-size: 17px;
+        }
+
+        /* SPECS */
+
+        .specs {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .spec {
+            padding: 20px;
+            background: #10141a;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 15px;
+        }
+
+        .spec strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .spec span {
+            color: #8e96a2;
+        }
+
+        /* PRICE */
+
+        .price-section {
+            text-align: center;
+            background:
+                radial-gradient(circle at center, rgba(255,91,61,0.13), transparent 45%);
+        }
+
+        .price-card {
+            max-width: 600px;
+            margin: 50px auto 0;
+            padding: 45px 30px;
+            border-radius: 30px;
+            background: linear-gradient(145deg, #141920, #090b0f);
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+        }
+
+        .price-label {
+            color: #9299a5;
+            font-size: 15px;
+        }
+
+        .price {
+            font-size: 72px;
+            font-weight: 900;
+            letter-spacing: -4px;
+            margin: 10px 0 20px;
+        }
+
+        .price-note {
+            color: #777f8c;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 50px 0;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            color: #747c88;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        footer strong {
+            color: #ffffff;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            .nav-inner {
+                height: 64px;
+            }
+
+            .nav-button {
+                padding: 9px 14px;
+                font-size: 12px;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 70px 0 90px;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .split {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .big-number {
+                font-size: 110px;
+            }
+
+            .specs {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 75px 0;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <div class="container nav-inner">
+
+            <div class="logo">
+                70<span>mai</span>
+            </div>
+
+            <a href="#kaufen" class="nav-button">
+                300 € – Jetzt entdecken
+            </a>
+
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <header class="hero">
+
+        <div class="container hero-content">
+
+            <div class="eyebrow">
+                NEXT-GENERATION DASH CAM
+            </div>
+
+            <h1>
+                70mai<br>
+                <span>4K Omni</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                360°-Rundumsicht trifft auf echte 4K-Bildqualität.
+                Entwickelt für mehr Übersicht, mehr Details und
+                intelligente Überwachung auf jeder Fahrt.
+            </p>
+
+
+            <div class="camera-stage">
+
+                <div class="camera-glow"></div>
+
+                <div class="camera">
+
+                    <div class="camera-lens"></div>
+
+                    <div class="camera-led"></div>
+
+                    <div class="camera-label">
+                        70mai 4K OMNI
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="buttons">
+
+                <a href="#features" class="button button-primary">
+                    Produkt entdecken
+                </a>
+
+                <a href="#technik" class="button button-secondary">
+                    Technische Daten
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- FEATURES -->
+
+    <section id="features">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Mehr als nur eine Dashcam.
+            </h2>
+
+            <p class="section-subtitle">
+                Die 70mai 4K Omni kombiniert 360°-Rundumsicht,
+                hochauflösende Aufnahmen und intelligente Funktionen
+                in einem modernen Kamerasystem.
+            </p>
+
+
+            <div class="features">
+
+                <div class="feature">
+
+                    <div class="feature-number">
+                        01 / 360°
+                    </div>
+
+                    <h3>
+                        Rundumsicht
+                    </h3>
+
+                    <p>
+                        Das drehbare Kameradesign ermöglicht eine
+                        umfassende Sicht rund um das Fahrzeug und
+                        hilft dabei, relevante Situationen im Blick
+                        zu behalten.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-number">
+                        02 / 4K
+                    </div>
+
+                    <h3>
+                        Extreme Detailtreue
+                    </h3>
+
+                    <p>
+                        Der Sony STARVIS 2 IMX678 Sensor ermöglicht
+                        hochauflösende 4K-Aufnahmen mit vielen Details.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-number">
+                        03 / AI
+                    </div>
+
+                    <h3>
+                        Intelligente Erkennung
+                    </h3>
+
+                    <p>
+                        Die KI-Bewegungserkennung unterstützt die
+                        Überwachung rund um das Fahrzeug.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-number">
+                        04 / 4G
+                    </div>
+
+                    <h3>
+                        Vernetzt
+                    </h3>
+
+                    <p>
+                        Die Kamera ist mit 4G-Funktionen kompatibel
+                        und kann zusammen mit entsprechendem Zubehör
+                        für zusätzliche Fernüberwachungsfunktionen
+                        eingesetzt werden.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 4K -->
+
+    <section class="dark-section">
+
+        <div class="container split">
+
+            <div>
+
+                <div class="big-number">
+                    4K<span>.</span>
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Details, die<br>
+                    sichtbar bleiben.
+                </h2>
+
+                <p>
+                    Mit Sony STARVIS 2 IMX678 und moderner
+                    Bildverarbeitung liefert die 4K Omni
+                    hochauflösende Aufnahmen.
+                </p>
+
+                <br>
+
+                <p>
+                    Im Einzelkanal-Modus unterstützt die Kamera
+                    laut 70mai 4K mit bis zu 60 FPS. Bei
+                    Dualkanal-Aufnahmen sind bis zu 4K mit 30 FPS
+                    möglich.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TECHNISCHE DATEN -->
+
+    <section id="technik">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Technik auf einen Blick.
+            </h2>
+
+            <p class="section-subtitle">
+                Die wichtigsten Eigenschaften der 70mai Dash Cam 4K Omni.
+            </p>
+
+
+            <div class="specs">
+
+                <div class="spec">
+                    <strong>Auflösung</strong>
+                    <span>Bis zu 4K</span>
+                </div>
+
+                <div class="spec">
+                    <strong>Bildrate</strong>
+                    <span>Bis zu 60 FPS im Einzelkanal-Modus</span>
+                </div>
+
+                <div class="spec">
+                    <strong>Bildsensor</strong>
+                    <span>Sony STARVIS 2 IMX678</span>
+                </div>
+
+                <div class="spec">
+                    <strong>Rundumsicht</strong>
+                    <span>360° rotierendes Kameradesign</span>
+                </div>
+
+                <div class="spec">
+                    <strong>HDR</strong>
+                    <span>HDR-Zweikanal-Aufnahme</span>
+                </div>
+
+                <div class="spec">
+                    <strong>KI</strong>
+                    <span>KI-Bewegungserkennung 2.0</span>
+                </div>
+
+                <div class="spec">
+                    <strong>4G</strong>
+                    <span>4G-kompatibel</span>
+                </div>
+
+                <div class="spec">
+                    <strong>WLAN</strong>
+                    <span>Wi-Fi 6 mit 5 GHz</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- KAUFEN -->
+
+    <section class="price-section" id="kaufen">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Deine nächste Fahrt.<br>
+                Besser im Blick.
+            </h2>
+
+            <div class="price-card">
+
+                <div class="price-label">
+                    70mai Dash Cam 4K Omni
+                </div>
+
+                <div class="price">
+                    300 €
+                </div>
+
+                <div class="price-note">
+                    Verkaufspreis
+                </div>
+
+                <a
+                    href="https://www.70mai.com/de/4komni/"
+                    target="_blank"
+                    class="button button-primary"
+                >
+                    Produkt ansehen
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                <strong>70mai Dash Cam 4K Omni</strong>
+            </p>
+
+            <p>
+                Produktinformationen basieren auf Angaben des Herstellers.
+            </p>
+
+            <br>
+
+            <p>
+                © 2026 – Produktpräsentation
+            </p>
+
+        </div>
+
+    </footer>
+
+
+</body>
+</html>
