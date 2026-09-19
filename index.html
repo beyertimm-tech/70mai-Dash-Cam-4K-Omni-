@@ -1,0 +1,3125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>70mai Dash Cam 4K Omni — See Everything</title>
+
+    <meta name="description"
+          content="70mai Dash Cam 4K Omni. 360° full-view, true 4K recording, AI motion detection and connected vehicle monitoring.">
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            background: #050505;
+            color: #ffffff;
+
+            overflow-x: hidden;
+
+            line-height: 1.5;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        ::selection {
+            background: #ffffff;
+            color: #000000;
+        }
+
+
+        /* =====================================================
+           VARIABLES
+        ===================================================== */
+
+        :root {
+
+            --black: #050505;
+            --dark: #090909;
+            --dark2: #101010;
+            --gray: #888888;
+            --light-gray: #bdbdbd;
+            --white: #ffffff;
+
+            --accent: #ff5b3d;
+
+            --border:
+                rgba(255,255,255,0.10);
+
+            --glass:
+                rgba(255,255,255,0.055);
+
+            --max:
+                1250px;
+        }
+
+
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
+
+        .container {
+
+            width: min(
+                calc(100% - 40px),
+                var(--max)
+            );
+
+            margin: auto;
+        }
+
+        section {
+            position: relative;
+        }
+
+        .eyebrow {
+
+            font-size: 12px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            color: #8f8f8f;
+
+            margin-bottom: 22px;
+        }
+
+        .gradient-text {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #777777
+                );
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        .nav {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            z-index: 9999;
+
+            background:
+                rgba(5,5,5,0.72);
+
+            backdrop-filter:
+                blur(22px);
+
+            -webkit-backdrop-filter:
+                blur(22px);
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.07);
+        }
+
+        .nav-inner {
+
+            height: 70px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+        .brand {
+
+            font-size: 21px;
+
+            font-weight: 800;
+
+            letter-spacing: -1px;
+        }
+
+        .brand span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 30px;
+        }
+
+        .nav-links a {
+
+            color: #a7a7a7;
+
+            font-size: 13px;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .nav-cta {
+
+            background: white;
+
+            color: black !important;
+
+            padding:
+                10px 19px;
+
+            border-radius: 30px;
+
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+
+            min-height: 100vh;
+
+            padding-top: 70px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            overflow: hidden;
+
+            background:
+
+                radial-gradient(
+                    circle at 50% 35%,
+                    rgba(255,91,61,0.14),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 50% 90%,
+                    rgba(255,255,255,0.06),
+                    transparent 35%
+                );
+        }
+
+        .hero-content {
+
+            width: 100%;
+
+            padding:
+                90px 0 100px;
+        }
+
+        .hero h1 {
+
+            font-size:
+                clamp(
+                    58px,
+                    12vw,
+                    150px
+                );
+
+            line-height:
+                0.88;
+
+            letter-spacing:
+                -7px;
+
+            font-weight:
+                800;
+
+            margin-bottom:
+                30px;
+        }
+
+        .hero h1 .orange {
+            color: var(--accent);
+        }
+
+        .hero-subtitle {
+
+            max-width:
+                650px;
+
+            margin:
+                auto;
+
+            color:
+                #9b9b9b;
+
+            font-size:
+                clamp(
+                    16px,
+                    2vw,
+                    20px
+                );
+        }
+
+
+        /* =====================================================
+           PRODUCT VISUAL
+        ===================================================== */
+
+        .product-stage {
+
+            position: relative;
+
+            height:
+                390px;
+
+            max-width:
+                800px;
+
+            margin:
+                40px auto 25px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+        }
+
+        .product-glow {
+
+            position: absolute;
+
+            width:
+                300px;
+
+            height:
+                300px;
+
+            border-radius:
+                50%;
+
+            background:
+                rgba(255,91,61,0.17);
+
+            filter:
+                blur(75px);
+
+            animation:
+                pulse 4s
+                ease-in-out
+                infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,100% {
+                transform:
+                    scale(0.9);
+                opacity:
+                    0.55;
+            }
+
+            50% {
+                transform:
+                    scale(1.12);
+                opacity:
+                    0.9;
+            }
+        }
+
+        .product {
+
+            width:
+                360px;
+
+            height:
+                205px;
+
+            position:
+                relative;
+
+            border-radius:
+                55px;
+
+            transform:
+                perspective(900px)
+                rotateX(9deg)
+                rotateY(-12deg)
+                rotateZ(-2deg);
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    #3b3d40 0%,
+                    #1c1d20 35%,
+                    #080808 100%
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,0.24);
+
+            box-shadow:
+
+                0 45px 100px
+                rgba(0,0,0,0.8),
+
+                inset 0 1px 1px
+                rgba(255,255,255,0.25),
+
+                inset 0 -15px 30px
+                rgba(0,0,0,0.4);
+
+            animation:
+                floating 5s
+                ease-in-out
+                infinite;
+        }
+
+        @keyframes floating {
+
+            0%,100% {
+                transform:
+                    perspective(900px)
+                    rotateX(9deg)
+                    rotateY(-12deg)
+                    rotateZ(-2deg)
+                    translateY(0);
+            }
+
+            50% {
+                transform:
+                    perspective(900px)
+                    rotateX(9deg)
+                    rotateY(-12deg)
+                    rotateZ(-2deg)
+                    translateY(-12px);
+            }
+        }
+
+        .lens {
+
+            position:
+                absolute;
+
+            width:
+                142px;
+
+            height:
+                142px;
+
+            left:
+                50%;
+
+            top:
+                50%;
+
+            transform:
+                translate(-50%,-50%);
+
+            border-radius:
+                50%;
+
+            background:
+
+                radial-gradient(
+                    circle at 32% 25%,
+                    #dce9ff 0%,
+                    #637899 5%,
+                    #172235 20%,
+                    #05070b 50%,
+                    #000000 72%
+                );
+
+            border:
+                9px solid
+                #16181b;
+
+            box-shadow:
+
+                0 0 0 2px
+                #575b60,
+
+                0 0 35px
+                rgba(85,130,255,0.4),
+
+                inset 0 0 30px
+                rgba(255,255,255,0.08);
+        }
+
+        .lens::after {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            width:
+                35px;
+
+            height:
+                35px;
+
+            top:
+                18px;
+
+            left:
+                28px;
+
+            border-radius:
+                50%;
+
+            background:
+                rgba(255,255,255,0.35);
+
+            filter:
+                blur(8px);
+        }
+
+        .led {
+
+            position:
+                absolute;
+
+            right:
+                30px;
+
+            top:
+                25px;
+
+            width:
+                9px;
+
+            height:
+                9px;
+
+            border-radius:
+                50%;
+
+            background:
+                var(--accent);
+
+            box-shadow:
+                0 0 20px
+                var(--accent);
+        }
+
+        .product-logo {
+
+            position:
+                absolute;
+
+            bottom:
+                23px;
+
+            left:
+                30px;
+
+            color:
+                #9c9c9c;
+
+            font-size:
+                10px;
+
+            letter-spacing:
+                2px;
+        }
+
+
+        /* =====================================================
+           BUTTONS
+        ===================================================== */
+
+        .buttons {
+
+            display:
+                flex;
+
+            justify-content:
+                center;
+
+            flex-wrap:
+                wrap;
+
+            gap:
+                12px;
+
+            margin-top:
+                35px;
+        }
+
+        .btn {
+
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            min-width:
+                180px;
+
+            padding:
+                15px 24px;
+
+            border-radius:
+                50px;
+
+            font-size:
+                14px;
+
+            font-weight:
+                700;
+
+            transition:
+                0.3s;
+        }
+
+        .btn-primary {
+
+            background:
+                white;
+
+            color:
+                black;
+        }
+
+        .btn-primary:hover {
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 15px 35px
+                rgba(255,255,255,0.12);
+        }
+
+        .btn-outline {
+
+            border:
+                1px solid
+                rgba(255,255,255,0.2);
+
+            color:
+                white;
+        }
+
+        .btn-outline:hover {
+
+            background:
+                rgba(255,255,255,0.08);
+
+            transform:
+                translateY(-3px);
+        }
+
+
+        /* =====================================================
+           INTRO STAT BAR
+        ===================================================== */
+
+        .stats {
+
+            border-top:
+                1px solid
+                var(--border);
+
+            border-bottom:
+                1px solid
+                var(--border);
+
+            background:
+                #080808;
+        }
+
+        .stats-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(4,1fr);
+        }
+
+        .stat {
+
+            padding:
+                38px 20px;
+
+            text-align:
+                center;
+
+            border-right:
+                1px solid
+                var(--border);
+        }
+
+        .stat:last-child {
+            border-right:
+                none;
+        }
+
+        .stat strong {
+
+            display:
+                block;
+
+            font-size:
+                30px;
+
+            letter-spacing:
+                -1px;
+
+            margin-bottom:
+                6px;
+        }
+
+        .stat span {
+
+            color:
+                #777;
+
+            font-size:
+                12px;
+
+            text-transform:
+                uppercase;
+
+            letter-spacing:
+                1px;
+        }
+
+
+        /* =====================================================
+           360 SECTION
+        ===================================================== */
+
+        .section {
+
+            padding:
+                150px 0;
+        }
+
+        .section-dark {
+
+            background:
+                #080808;
+        }
+
+        .two-column {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap:
+                90px;
+
+            align-items:
+                center;
+        }
+
+        .section-title {
+
+            font-size:
+                clamp(
+                    42px,
+                    6vw,
+                    82px
+                );
+
+            line-height:
+                0.95;
+
+            letter-spacing:
+                -4px;
+
+            margin-bottom:
+                25px;
+        }
+
+        .section-text {
+
+            color:
+                #8e8e8e;
+
+            font-size:
+                17px;
+
+            max-width:
+                550px;
+        }
+
+
+        /* =====================================================
+           360 VISUAL
+        ===================================================== */
+
+        .orbit {
+
+            width:
+                min(80vw,430px);
+
+            height:
+                min(80vw,430px);
+
+            margin:
+                auto;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.15);
+
+            border-radius:
+                50%;
+
+            position:
+                relative;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+        }
+
+        .orbit::before,
+        .orbit::after {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            border-radius:
+                50%;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+        }
+
+        .orbit::before {
+
+            width:
+                72%;
+
+            height:
+                72%;
+        }
+
+        .orbit::after {
+
+            width:
+                44%;
+
+            height:
+                44%;
+        }
+
+        .orbit-camera {
+
+            width:
+                115px;
+
+            height:
+                70px;
+
+            border-radius:
+                22px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #383b3f,
+                    #090909
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,0.2);
+
+            position:
+                relative;
+
+            z-index:
+                3;
+
+            box-shadow:
+                0 25px 60px
+                rgba(0,0,0,0.8);
+        }
+
+        .orbit-camera::after {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            width:
+                40px;
+
+            height:
+                40px;
+
+            border-radius:
+                50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    #28344b,
+                    #020305 65%
+                );
+
+            left:
+                37px;
+
+            top:
+                14px;
+
+            border:
+                3px solid
+                #17191d;
+        }
+
+        .orbit-label {
+
+            position:
+                absolute;
+
+            font-size:
+                12px;
+
+            color:
+                #777;
+
+            letter-spacing:
+                1px;
+        }
+
+        .label-top {
+            top: 20px;
+        }
+
+        .label-right {
+            right: -20px;
+        }
+
+        .label-bottom {
+            bottom: 20px;
+        }
+
+        .label-left {
+            left: -20px;
+        }
+
+
+        /* =====================================================
+           4K SECTION
+        ===================================================== */
+
+        .four-k {
+
+            padding:
+                170px 0;
+
+            overflow:
+                hidden;
+
+            background:
+                #050505;
+        }
+
+        .four-k-number {
+
+            font-size:
+                clamp(
+                    130px,
+                    28vw,
+                    360px
+                );
+
+            font-weight:
+                900;
+
+            letter-spacing:
+                -20px;
+
+            line-height:
+                0.75;
+
+            color:
+                white;
+
+            text-align:
+                center;
+        }
+
+        .four-k-number span {
+            color:
+                var(--accent);
+        }
+
+        .four-k-copy {
+
+            max-width:
+                680px;
+
+            margin:
+                80px auto 0;
+
+            text-align:
+                center;
+        }
+
+        .four-k-copy h2 {
+
+            font-size:
+                clamp(
+                    35px,
+                    5vw,
+                    65px
+                );
+
+            letter-spacing:
+                -3px;
+
+            margin-bottom:
+                20px;
+        }
+
+        .four-k-copy p {
+
+            color:
+                #888;
+
+            font-size:
+                17px;
+        }
+
+
+        /* =====================================================
+           DUAL VISION
+        ===================================================== */
+
+        .dual-card {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            min-height:
+                600px;
+
+            overflow:
+                hidden;
+
+            border-radius:
+                30px;
+
+            border:
+                1px solid
+                var(--border);
+
+            background:
+                #0b0b0b;
+        }
+
+        .vision {
+
+            position:
+                relative;
+
+            padding:
+                55px;
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            justify-content:
+                flex-end;
+
+            min-height:
+                500px;
+
+            overflow:
+                hidden;
+        }
+
+        .vision:first-child {
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #252525,
+                    #080808
+                );
+        }
+
+        .vision:last-child {
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #15171c,
+                    #020306
+                );
+        }
+
+        .vision::before {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            width:
+                300px;
+
+            height:
+                300px;
+
+            border-radius:
+                50%;
+
+            background:
+                rgba(255,255,255,0.04);
+
+            filter:
+                blur(50px);
+
+            top:
+                50px;
+
+            right:
+                50px;
+        }
+
+        .vision h3 {
+
+            position:
+                relative;
+
+            font-size:
+                36px;
+
+            margin-bottom:
+                10px;
+        }
+
+        .vision p {
+
+            position:
+                relative;
+
+            color:
+                #858585;
+
+            max-width:
+                400px;
+        }
+
+
+        /* =====================================================
+           NIGHT VISION
+        ===================================================== */
+
+        .night {
+
+            padding:
+                160px 0;
+
+            background:
+
+                radial-gradient(
+                    circle at 70% 40%,
+                    rgba(37,76,130,0.18),
+                    transparent 35%
+                ),
+
+                #05070b;
+        }
+
+        .night-content {
+
+            max-width:
+                700px;
+        }
+
+        .night h2 {
+
+            font-size:
+                clamp(
+                    45px,
+                    7vw,
+                    90px
+                );
+
+            line-height:
+                0.92;
+
+            letter-spacing:
+                -5px;
+
+            margin-bottom:
+                30px;
+        }
+
+        .night p {
+
+            color:
+                #858b95;
+
+            font-size:
+                18px;
+        }
+
+        .night-chip {
+
+            display:
+                inline-block;
+
+            margin-top:
+                30px;
+
+            padding:
+                9px 15px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            border-radius:
+                50px;
+
+            color:
+                #aaa;
+
+            font-size:
+                12px;
+        }
+
+
+        /* =====================================================
+           AI SECTION
+        ===================================================== */
+
+        .ai {
+
+            padding:
+                150px 0;
+
+            background:
+                #0a0a0a;
+        }
+
+        .ai-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap:
+                80px;
+
+            align-items:
+                center;
+        }
+
+        .ai-number {
+
+            font-size:
+                clamp(
+                    120px,
+                    20vw,
+                    250px
+                );
+
+            font-weight:
+                900;
+
+            line-height:
+                0.7;
+
+            letter-spacing:
+                -12px;
+        }
+
+        .ai-number span {
+            color:
+                var(--accent);
+        }
+
+        .ai h2 {
+
+            font-size:
+                clamp(
+                    38px,
+                    5vw,
+                    65px
+                );
+
+            line-height:
+                0.95;
+
+            letter-spacing:
+                -3px;
+
+            margin-bottom:
+                25px;
+        }
+
+        .ai p {
+
+            color:
+                #858585;
+
+            font-size:
+                17px;
+        }
+
+
+        /* =====================================================
+           CONNECTIVITY
+        ===================================================== */
+
+        .connectivity {
+
+            padding:
+                150px 0;
+        }
+
+        .connect-head {
+
+            text-align:
+                center;
+
+            max-width:
+                800px;
+
+            margin:
+                auto auto 70px;
+        }
+
+        .connect-head h2 {
+
+            font-size:
+                clamp(
+                    40px,
+                    6vw,
+                    75px
+                );
+
+            line-height:
+                0.95;
+
+            letter-spacing:
+                -4px;
+
+            margin-bottom:
+                25px;
+        }
+
+        .connect-head p {
+            color:
+                #858585;
+        }
+
+        .connect-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap:
+                16px;
+        }
+
+        .connect-card {
+
+            min-height:
+                260px;
+
+            padding:
+                35px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                25px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #111,
+                    #080808
+                );
+
+            transition:
+                0.3s;
+        }
+
+        .connect-card:hover {
+
+            transform:
+                translateY(-7px);
+
+            border-color:
+                rgba(255,255,255,0.2);
+        }
+
+        .connect-icon {
+
+            width:
+                48px;
+
+            height:
+                48px;
+
+            border-radius:
+                14px;
+
+            background:
+                rgba(255,255,255,0.07);
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            font-size:
+                13px;
+
+            margin-bottom:
+                50px;
+
+            color:
+                white;
+        }
+
+        .connect-card h3 {
+
+            font-size:
+                22px;
+
+            margin-bottom:
+                8px;
+        }
+
+        .connect-card p {
+
+            color:
+                #777;
+
+            font-size:
+                14px;
+        }
+
+
+        /* =====================================================
+           SHOT ON
+        ===================================================== */
+
+        .shot {
+
+            padding:
+                160px 0;
+
+            background:
+                #080808;
+        }
+
+        .shot-title {
+
+            text-align:
+                center;
+
+            margin-bottom:
+                70px;
+        }
+
+        .shot-title h2 {
+
+            font-size:
+                clamp(
+                    42px,
+                    6vw,
+                    80px
+                );
+
+            letter-spacing:
+                -4px;
+
+            line-height:
+                0.95;
+        }
+
+        .gallery {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1.4fr 0.8fr;
+
+            gap:
+                15px;
+
+            max-width:
+                1100px;
+
+            margin:
+                auto;
+        }
+
+        .gallery-card {
+
+            min-height:
+                300px;
+
+            border-radius:
+                25px;
+
+            overflow:
+                hidden;
+
+            position:
+                relative;
+
+            border:
+                1px solid
+                var(--border);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #242424,
+                    #080808
+                );
+        }
+
+        .gallery-card.large {
+
+            min-height:
+                500px;
+
+            background:
+                radial-gradient(
+                    circle at 50% 40%,
+                    #343434,
+                    #080808 60%
+                );
+        }
+
+        .gallery-card::after {
+
+            content:
+                "4K OMNI";
+
+            position:
+                absolute;
+
+            bottom:
+                22px;
+
+            left:
+                22px;
+
+            font-size:
+                11px;
+
+            letter-spacing:
+                2px;
+
+            color:
+                rgba(255,255,255,0.5);
+        }
+
+        .gallery-card .road {
+
+            position:
+                absolute;
+
+            left:
+                20%;
+
+            right:
+                20%;
+
+            bottom:
+                -20%;
+
+            height:
+                90%;
+
+            transform:
+                perspective(500px)
+                rotateX(55deg);
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent 0 44%,
+                    rgba(255,255,255,0.18) 45% 55%,
+                    transparent 56%
+                );
+        }
+
+
+        /* =====================================================
+           SPECS
+        ===================================================== */
+
+        .spec-section {
+
+            padding:
+                150px 0;
+        }
+
+        .spec-header {
+
+            margin-bottom:
+                60px;
+        }
+
+        .spec-header h2 {
+
+            font-size:
+                clamp(
+                    45px,
+                    6vw,
+                    75px
+                );
+
+            letter-spacing:
+                -4px;
+        }
+
+        .spec-table {
+
+            border-top:
+                1px solid
+                var(--border);
+        }
+
+        .spec-row {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            padding:
+                23px 0;
+
+            border-bottom:
+                1px solid
+                var(--border);
+
+            gap:
+                20px;
+        }
+
+        .spec-row span:first-child {
+            color:
+                #777;
+        }
+
+        .spec-row span:last-child {
+            text-align:
+                right;
+        }
+
+
+        /* =====================================================
+           PRICE
+        ===================================================== */
+
+        .buy {
+
+            padding:
+                170px 0;
+
+            text-align:
+                center;
+
+            background:
+
+                radial-gradient(
+                    circle at center,
+                    rgba(255,91,61,0.14),
+                    transparent 35%
+                );
+        }
+
+        .buy h2 {
+
+            font-size:
+                clamp(
+                    50px,
+                    8vw,
+                    100px
+                );
+
+            line-height:
+                0.9;
+
+            letter-spacing:
+                -5px;
+
+            margin-bottom:
+                25px;
+        }
+
+        .buy-subtitle {
+
+            color:
+                #888;
+
+            max-width:
+                550px;
+
+            margin:
+                auto;
+        }
+
+        .price-card {
+
+            max-width:
+                520px;
+
+            margin:
+                60px auto 0;
+
+            padding:
+                50px 35px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            border-radius:
+                30px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.07),
+                    rgba(255,255,255,0.025)
+                );
+
+            backdrop-filter:
+                blur(20px);
+
+            box-shadow:
+                0 40px 100px
+                rgba(0,0,0,0.45);
+        }
+
+        .price-name {
+
+            color:
+                #999;
+
+            font-size:
+                14px;
+
+            margin-bottom:
+                12px;
+        }
+
+        .price {
+
+            font-size:
+                78px;
+
+            font-weight:
+                800;
+
+            letter-spacing:
+                -5px;
+
+            margin-bottom:
+                10px;
+        }
+
+        .price-note {
+
+            color:
+                #666;
+
+            font-size:
+                12px;
+
+            margin-bottom:
+                30px;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            padding:
+                60px 0 40px;
+
+            border-top:
+                1px solid
+                var(--border);
+
+            color:
+                #666;
+
+            font-size:
+                12px;
+        }
+
+        .footer-top {
+
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                center;
+
+            padding-bottom:
+                35px;
+
+            border-bottom:
+                1px solid
+                var(--border);
+
+            margin-bottom:
+                25px;
+        }
+
+        .footer-brand {
+
+            font-size:
+                20px;
+
+            color:
+                white;
+
+            font-weight:
+                800;
+        }
+
+        .footer-brand span {
+            color:
+                var(--accent);
+        }
+
+        .footer-note {
+            max-width:
+                600px;
+        }
+
+
+        /* =====================================================
+           REVEAL ANIMATION
+        ===================================================== */
+
+        .reveal {
+
+            opacity:
+                0;
+
+            transform:
+                translateY(35px);
+
+            animation:
+                revealIn
+                1s
+                ease forwards;
+        }
+
+        @keyframes revealIn {
+
+            to {
+
+                opacity:
+                    1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 850px) {
+
+            .nav-links a:not(.nav-cta) {
+                display:
+                    none;
+            }
+
+            .nav-inner {
+                height:
+                    62px;
+            }
+
+            .hero {
+                min-height:
+                    auto;
+            }
+
+            .hero-content {
+                padding:
+                    90px 0 80px;
+            }
+
+            .hero h1 {
+                letter-spacing:
+                    -4px;
+            }
+
+            .product-stage {
+                height:
+                    320px;
+            }
+
+            .product {
+                width:
+                    290px;
+
+                height:
+                    165px;
+            }
+
+            .lens {
+                width:
+                    110px;
+
+                height:
+                    110px;
+            }
+
+            .stats-grid {
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+            .stat:nth-child(2) {
+                border-right:
+                    none;
+            }
+
+            .stat:nth-child(3),
+            .stat:nth-child(4) {
+                border-top:
+                    1px solid
+                    var(--border);
+            }
+
+            .two-column,
+            .ai-grid {
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    60px;
+            }
+
+            .dual-card {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .connect-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .gallery {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .gallery-card.large {
+                min-height:
+                    350px;
+            }
+
+            .section {
+                padding:
+                    100px 0;
+            }
+
+            .four-k {
+                padding:
+                    110px 0;
+            }
+
+            .night,
+            .ai,
+            .connectivity,
+            .shot,
+            .spec-section,
+            .buy {
+                padding:
+                    110px 0;
+            }
+
+            .footer-top {
+                align-items:
+                    flex-start;
+
+                flex-direction:
+                    column;
+
+                gap:
+                    20px;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            .container {
+                width:
+                    calc(100% - 28px);
+            }
+
+            .hero h1 {
+                font-size:
+                    60px;
+
+                letter-spacing:
+                    -3px;
+            }
+
+            .hero-subtitle {
+                font-size:
+                    15px;
+            }
+
+            .product-stage {
+                height:
+                    280px;
+            }
+
+            .product {
+                width:
+                    245px;
+
+                height:
+                    140px;
+
+                border-radius:
+                    38px;
+            }
+
+            .lens {
+                width:
+                    90px;
+
+                height:
+                    90px;
+
+                border-width:
+                    6px;
+            }
+
+            .product-logo {
+                bottom:
+                    16px;
+
+                left:
+                    18px;
+            }
+
+            .stat strong {
+                font-size:
+                    24px;
+            }
+
+            .section-title {
+                letter-spacing:
+                    -2px;
+            }
+
+            .vision {
+                padding:
+                    30px;
+
+                min-height:
+                    380px;
+            }
+
+            .spec-row {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .spec-row span:last-child {
+                text-align:
+                    left;
+            }
+
+            .price {
+                font-size:
+                    65px;
+            }
+
+            .btn {
+                width:
+                    100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="nav">
+
+    <div class="container nav-inner">
+
+        <div class="brand">
+            70<span>mai</span>
+        </div>
+
+        <div class="nav-links">
+
+            <a href="#overview">
+                Overview
+            </a>
+
+            <a href="#technology">
+                Technology
+            </a>
+
+            <a href="#specs">
+                Specs
+            </a>
+
+            <a
+                href="#buy"
+                class="nav-cta"
+            >
+                €300
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+    <div class="container hero-content">
+
+        <div class="eyebrow">
+            NEXT-GENERATION 360° DASH CAM
+        </div>
+
+        <h1>
+
+            See
+            <span class="orange">
+                Everything.
+            </span>
+
+        </h1>
+
+        <p class="hero-subtitle">
+
+            Meet the 70mai Dash Cam 4K Omni —
+            a next-generation camera combining
+            360° full-view coverage, true 4K clarity
+            and intelligent monitoring.
+
+        </p>
+
+
+        <div class="product-stage">
+
+            <div class="product-glow"></div>
+
+            <div class="product">
+
+                <div class="lens"></div>
+
+                <div class="led"></div>
+
+                <div class="product-logo">
+                    70mai 4K OMNI
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="buttons">
+
+            <a
+                href="#overview"
+                class="btn btn-primary"
+            >
+                Explore 4K Omni
+            </a>
+
+            <a
+                href="#specs"
+                class="btn btn-outline"
+            >
+                Technical details
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     STATS
+===================================================== -->
+
+<section class="stats">
+
+    <div class="container stats-grid">
+
+        <div class="stat">
+
+            <strong>
+                360°
+            </strong>
+
+            <span>
+                Full View
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                4K
+            </strong>
+
+            <span>
+                Resolution
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                60
+            </strong>
+
+            <span>
+                FPS Single Channel
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                AI 2.0
+            </strong>
+
+            <span>
+                Motion Detection
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     360 OVERVIEW
+===================================================== -->
+
+<section
+    class="section"
+    id="overview"
+>
+
+    <div class="container two-column">
+
+
+        <div>
+
+            <div class="eyebrow">
+                01 — FULL VIEW
+            </div>
+
+            <h2 class="section-title">
+
+                One camera.
+                <br>
+
+                <span class="gradient-text">
+                    No blind spots.
+                </span>
+
+            </h2>
+
+            <p class="section-text">
+
+                The 4K Omni uses a 360° rotating design
+                powered by dual Hall Effect sensors
+                and a magnetic system.
+
+                <br><br>
+
+                The result is precise lens positioning
+                and smooth rotation, allowing the camera
+                to monitor different directions around
+                your vehicle.
+
+            </p>
+
+        </div>
+
+
+        <div class="orbit">
+
+            <span class="orbit-label label-top">
+                FRONT
+            </span>
+
+            <span class="orbit-label label-right">
+                RIGHT
+            </span>
+
+            <span class="orbit-label label-bottom">
+                REAR
+            </span>
+
+            <span class="orbit-label label-left">
+                LEFT
+            </span>
+
+
+            <div class="orbit-camera"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TRUE 4K
+===================================================== -->
+
+<section class="four-k">
+
+    <div class="container">
+
+        <div class="four-k-number">
+            4K<span>.</span>
+        </div>
+
+        <div class="four-k-copy">
+
+            <div class="eyebrow">
+                02 — TRUE 4K
+            </div>
+
+            <h2>
+                Details that
+                stay visible.
+            </h2>
+
+            <p>
+
+                Sony IMX678 technology combined with
+                a 12nm quad-core processor delivers
+                high-resolution imaging and detailed
+                footage.
+
+                <br><br>
+
+                4K at 60 FPS is available in
+                single-channel mode, while dual-channel
+                recording supports up to 4K at 30 FPS.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DUAL VISION
+===================================================== -->
+
+<section
+    class="section section-dark"
+    id="technology"
+>
+
+    <div class="container">
+
+        <div class="eyebrow">
+            03 — DUAL VISION
+        </div>
+
+        <h2 class="section-title">
+
+            Two cameras.
+            <br>
+
+            <span class="gradient-text">
+                Double the view.
+            </span>
+
+        </h2>
+
+
+        <div class="dual-card">
+
+
+            <div class="vision">
+
+                <h3>
+                    Front
+                </h3>
+
+                <p>
+
+                    High-resolution 4K recording
+                    captures detailed footage of
+                    the road ahead.
+
+                </p>
+
+            </div>
+
+
+            <div class="vision">
+
+                <h3>
+                    Rear
+                </h3>
+
+                <p>
+
+                    Dual-channel recording adds
+                    another perspective and supports
+                    HDR recording on both cameras.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LUMI VISION
+===================================================== -->
+
+<section class="night">
+
+    <div class="container">
+
+        <div class="night-content">
+
+            <div class="eyebrow">
+                04 — NIGHT TECHNOLOGY
+            </div>
+
+            <h2>
+
+                See clearly.
+                <br>
+
+                Even when
+                <span class="gradient-text">
+                    light disappears.
+                </span>
+
+            </h2>
+
+            <p>
+
+                70mai Lumi Vision is designed for
+                parking surveillance in extremely
+                low-light environments.
+
+                <br><br>
+
+                Combined image processing technologies
+                help improve visibility in situations
+                such as dark parking garages and
+                poorly illuminated streets.
+
+            </p>
+
+            <div class="night-chip">
+                70mai LUMI VISION
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     AI
+===================================================== -->
+
+<section class="ai">
+
+    <div class="container ai-grid">
+
+
+        <div>
+
+            <div class="ai-number">
+                AI<span>.</span>
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <div class="eyebrow">
+                05 — INTELLIGENCE
+            </div>
+
+            <h2>
+
+                Precision
+                in motion.
+
+            </h2>
+
+            <p>
+
+                AI Motion Detection 2.0 combines
+                70mai's AI algorithm with dual
+                Hall Effect sensors.
+
+                <br><br>
+
+                The system is designed to improve
+                smooth camera rotation and provide
+                precise human targeting during
+                supported parking surveillance modes.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONNECTIVITY
+===================================================== -->
+
+<section class="connectivity">
+
+    <div class="container">
+
+        <div class="connect-head">
+
+            <div class="eyebrow">
+                06 — CONNECTED
+            </div>
+
+            <h2>
+
+                Your car.
+                <br>
+
+                <span class="gradient-text">
+                    Always connected.
+                </span>
+
+            </h2>
+
+            <p>
+
+                Extend the capabilities of the
+                4K Omni with connected features
+                and compatible accessories.
+
+            </p>
+
+        </div>
+
+
+        <div class="connect-grid">
+
+
+            <div class="connect-card">
+
+                <div class="connect-icon">
+                    4G
+                </div>
+
+                <h3>
+                    4G LTE
+                </h3>
+
+                <p>
+
+                    Connected vehicle functions,
+                    app alerts and remote monitoring
+                    are available with compatible
+                    4G hardware.
+
+                </p>
+
+            </div>
+
+
+            <div class="connect-card">
+
+                <div class="connect-icon">
+                    Wi
+                </div>
+
+                <h3>
+                    Wi-Fi 6
+                </h3>
+
+                <p>
+
+                    5 GHz Wi-Fi 6 enables fast
+                    wireless transfer of recorded
+                    footage.
+
+                </p>
+
+            </div>
+
+
+            <div class="connect-card">
+
+                <div class="connect-icon">
+                    AI
+                </div>
+
+                <h3>
+                    Voice Control
+                </h3>
+
+                <p>
+
+                    Voice control allows selected
+                    hands-free interactions while
+                    driving.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SHOT ON 4K OMNI
+===================================================== -->
+
+<section class="shot">
+
+    <div class="container">
+
+        <div class="shot-title">
+
+            <div class="eyebrow">
+                07 — SHOT ON 4K OMNI
+            </div>
+
+            <h2>
+                Every journey.
+                <br>
+                <span class="gradient-text">
+                    Worth capturing.
+                </span>
+            </h2>
+
+        </div>
+
+
+        <div class="gallery">
+
+
+            <div class="gallery-card large">
+
+                <div class="road"></div>
+
+            </div>
+
+
+            <div>
+
+                <div
+                    class="gallery-card"
+                    style="margin-bottom:15px;"
+                >
+                </div>
+
+
+                <div
+                    class="gallery-card"
+                >
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SPECS
+===================================================== -->
+
+<section
+    class="spec-section"
+    id="specs"
+>
+
+    <div class="container">
+
+        <div class="spec-header">
+
+            <div class="eyebrow">
+                08 — TECHNICAL SPECIFICATIONS
+            </div>
+
+            <h2>
+                Built for
+                <span class="gradient-text">
+                    detail.
+                </span>
+            </h2>
+
+        </div>
+
+
+        <div class="spec-table">
+
+
+            <div class="spec-row">
+
+                <span>
+                    Camera
+                </span>
+
+                <span>
+                    70mai Dash Cam 4K Omni
+                </span>
+
+            </div>
+
+
+            <div class="spec-row">
+
+                <span>
+                    Resolution
+                </span>
+
+                <span>
+                    Up to 4K
+                </span>
+
+            </div>
+
+
+            <div class="spec-row">
+
+                <span>
+                    Frame Rate
+                </span>
+
+                <span>
+                    Up to 4K 60 FPS*
+                </span>
+
+            </div>
+
+
+            <div class="spec-row">
+
+                <span>
+                    Image Sensor
+                </span>
+
+                <span>
+                    Sony STARVIS 2 IMX678
+                </span>
+
+            </div>
+
+
+            <div class="spec-row">
+
+                <span>
+                    Processor
+                </span>
+
+                <span>
+                    12nm Quad-Core
+                </span>
+
+            </div>
+
+
+            <div class="spec-row">
+
+                <span>
+                    View
+                </span>
+
+                <span>
+                    360° Rotating Full View
+                </span>
+
+            </div>
+
+
+            <div class="spec-row">
+
+                <span>
+                    HDR
+                </span>
+
+                <span>
+                    Dual-Channel HDR
+                </span>
+
+            </div>
+
+
+            <div class="spec-row">
+
+                <span>
+                    AI
+                </span>
+
+                <span>
+                    AI Motion Detection 2.0
+                </span>
+
+            </div>
+
+
+            <div class="spec-row">
+
+                <span>
+                    Connectivity
+                </span>
+
+                <span>
+                    4G + Wi-Fi 6 5GHz
+                </span>
+
+            </div>
+
+
+            <div class="spec-row">
+
+                <span>
+                    Storage
+                </span>
+
+                <span>
+                    Up to 512 GB*
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+        <p
+            style="
+                color:#555;
+                font-size:11px;
+                margin-top:20px;
+            "
+        >
+
+            *4K 60 FPS is available in single-channel
+            mode. Dual-channel mode supports up to
+            4K 30 FPS. Accessories and feature
+            availability may vary by configuration
+            and region.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     BUY
+===================================================== -->
+
+<section
+    class="buy"
+    id="buy"
+>
+
+    <div class="container">
+
+        <div class="eyebrow">
+            09 — THE 4K OMNI
+        </div>
+
+        <h2>
+
+            Ready to
+            <br>
+
+            <span class="gradient-text">
+                see more?
+            </span>
+
+        </h2>
+
+        <p class="buy-subtitle">
+
+            Experience a new generation of
+            connected dash cam technology.
+
+        </p>
+
+
+        <div class="price-card">
+
+            <div class="price-name">
+                70mai Dash Cam 4K Omni
+            </div>
+
+            <div class="price">
+                €300
+            </div>
+
+            <div class="price-note">
+                Listed product price for this presentation
+            </div>
+
+
+            <a
+                href="https://www.70mai.com/us/4komni/"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-primary"
+            >
+                Explore the 4K Omni
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-top">
+
+            <div class="footer-brand">
+                70<span>mai</span>
+            </div>
+
+            <div>
+                Dash Cam 4K Omni
+            </div>
+
+        </div>
+
+
+        <div class="footer-note">
+
+            This website is a school project and
+            product presentation. Product information
+            is based on publicly available manufacturer
+            specifications.
+
+        </div>
+
+
+        <br>
+
+        <div>
+            © 2026 — School Project
+        </div>
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>
